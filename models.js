@@ -6,16 +6,16 @@ class Multimedia {
         this.#views = views;
     }
 }
-function play(titol, durada) {
+function play() {
     console.log("Reproduint")
-    views +1;
+    this.views +1;
 }
-
 console.log(play);
 
 function getViews(views) {
     console.log("El nombre actual de views es", views);
 }
-#calcularCostServer(durada) {
-    console.log("El precio es...", 60*0.01)
+
+calcularCostServer(durada) {
+    durada * 0.01
 }
