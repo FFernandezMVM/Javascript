@@ -40,3 +40,19 @@ class Serie extends Multimedia {
         return this.capitols * this.getViews() * 0.05;
     }
 }
+
+class Usuari {
+    mylist = [];
+
+afegirALlista(item) {
+    this.mylist.push(item);
+}
+tempsTotalConsumit() {
+    let minuts = 0;
+    for (let item of this.mylist) {
+        minuts += item.durada;
+    }
+    let hores = minuts / 60;
+    return hores;
+}
+}
