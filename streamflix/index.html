@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Storage StreamFlix</title>
+    <style>
+        body { background: #222; color: #ddd; font-family: monospace; padding: 2rem; }
+        .box { border: 1px solid #444; padding: 20px; border-radius: 8px; background: #333; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🛠️ Laboratori de proves: Storage</h1>
+        <p>Aquest HTML no té interfície visual encara.</p>
+        <p>Prem <strong>F12</strong> > <strong>Console</strong> per fer les proves.</p>
+        <hr>
+        <p>Variable disponible: <code>app.servei</code></p>
+    </div>
+
+    <script type="module">
+        import { Pelicula, Serie } from "./models.js";
+        import { StreamService } from "./storage.js";
+
+        // 1. Instanciem el servei
+        const servei = new StreamService();
+
+        // 2. Exposar a la consola per fer proves manuals
+        // Això permet a l'alumne escriure 'app' a la consola del navegador
+        window.app = {
+            servei: servei,
+            Pelicula: Pelicula,
+            Serie: Serie,
+            crearDades: () => {
+                const p = new Pelicula("Matrix", 130, 1999, 2);
+                const s = new Serie("Breaking Bad", 50, 62);
+                const llista = [p, s];
+                servei.guardarCataleg(llista);
+                console.log("✅ Dades de prova generades i guardades.");
+            }
+        };
+
+        console.log("🟢 Sistema llest. Escriu 'app.crearDades()' per començar.");
+    </script>
+</body>
+</html>
