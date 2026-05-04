@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebReel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>WebReel</h1>
+            <ul>
+                <li><a href="about.html">Sobre el proyecto.</a></li>
+                <button id="theme-toggle">Modo oscuro.</button>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="video-container">
+  <video id="main-video" loop muted playsinline>
+    <source src="assets/video/video.mp4" type="video/mp4">
+    Tu navegador no soporta videos. Usa uno mejor.
+        </video>
+</div>
+        <div class="btns-video">
+            <input type="range" id="bar-progress" value="0" max="100">
+            <button id="play-btn" aria-label="Reproducir o pausar Video">▶️ Play </button>
+            <button id="restart-Btn" aria-label="Reiniciar Video">↻ Restart</button>
+            <button id="retard-10" aria-label="Retroceder Video 10 segundos"> 🔟 Retroceder 10s</button>
+            <button id="advance-10" aria-label="Avanzar video 10 segundos">🔟 Avanzar 10s</button>
+            <button id="sound-btn" aria-label="Activar o mutear sonido">🔊 Sound</button>
+            <button id="down-sound" aria-label="Bajar sonido">🔉 Bajar sonido</button>
+            <button id="up-sound" aria-label="Subir sonido">🔊 Subir sonido</button>
+            <button id="full-screen">📺 Pantalla completa</button>
+        </div>
+    <div id="time-line">
+     <h2>Capitulos del Video.</h2>
+        <div class="timeline-container">
+        <button class="capitulo-btn" data-time="0">00:00 - Intro</button>
+        <button class="capitulo-btn" data-time="15">00:15 - Inicio Pokedex</button>
+        <button class="capitulo-btn" data-time="75">01:15 - Mis Pokemons</button>
+        <button class="capitulo-btn" data-time="138">02:18 - Combate Pokemon</button>
+    </div>
+    </div>
+<div>
+    <form id="coments-form">
+        <input type="text" id="user-name" placeholder="Tu nombre (solo letras)...">
+        <span id="name-error" style="color: red; display: none;">Nombre no válido (mín. 3 letras)</span>
+        <textarea name="commentary" id="coment-area" placeholder="Escribe tu comentario..."></textarea> 
+        <button type="submit" id="btn-send">Enviar comentario.</button>
+    </form>
+</div>
+<div id="coments-llist">
+    <h3>Comentarios:</h3>
+</div>
+
+</main>
+    <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
